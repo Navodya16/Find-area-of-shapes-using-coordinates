@@ -101,15 +101,16 @@ int main() {
         shapes[i].sortPointsClockwise(shapes[i]);
     }
 
-    for (size_t i = 0; i < shapes.size(); ++i) {
-        printf("%s: ", shapes[i].name.c_str());
-        for (size_t j = 0; j < shapes[i].points.size(); ++j) {
+    for (size_t i = 0; i < shapes.size(); ++i) 
+    {
+        double area = shapes[i].calculateArea(shapes[i]);
+        printf("Area of %s: %.2f\n", shapes[i].name.c_str(), area);
+        /*for (size_t j = 0; j < shapes[i].points.size(); ++j) {
             printf("(%d, %d) ", shapes[i].points[j].x, shapes[i].points[j].y);
         }
         printf("\n");
-        
-        double area = shapes[i].calculateArea(shapes[i]);
         printf("Area: %.2f\n", area);
+        */
     }
 
     return 0;
